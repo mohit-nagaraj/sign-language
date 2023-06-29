@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>Language Translator </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN Link for Icons -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+    <nav>
+      <h2>Team Phoenix</h2>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about_us') }}">About</a></li>
+        <li><a href="{{ url_for('contact_us') }}">Contact</a></li>
+        <li><a href="{{ url }}">{{ namer }}</a></li>
+      </ul>
+    </nav>
+    <table>
+      <tr>
+        <td>
+          <div>
+            <img src="{{ url_for('video_feed') }}" />
+          </div>
+        <script>
+          var eventSource = new EventSource('/stream');
+            eventSource.addEventListener('event_type', function(event) {
+                var data = JSON.parse(event.data);
+                document.getElementById('textcontainerbro').value = data.message;
+                var button = document.getElementById('clickbro');
+                button.click();
+            });
+
+        </script>
+
+        </td>
+        <td>
+          <div class="container">
+            <div class="wrapper">
+              <ul class="controls">
+                <li class="row from">
+                  <div class="icons">
+                    <i id="from" class="fas fa-volume-up"></i>
+                    <i id="fromm" class="fas fa-copy"></i>
+                  </div>
+                  <select></select>
+                </li>
+                <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
+                <li class="row to">
+                  <select></select>
+                  <div class="icons">
+                    <i id="to" class="fas fa-volume-up"></i>
+                    <i id="too" class="fas fa-copy"></i>
+                  </div>
+                </li>
+              </ul>
+              <div class="text-input" >
+                  <textarea id="textcontainerbro"  spellcheck="true" class="from-text" placeholder="Detected text"></textarea>
+                  <textarea id="translatedbro" spellcheck="false" readonly disabled class="to-text" placeholder="Translation"></textarea>
+              </div>
+            </div>
+            <button id="clickbro">Translate Text</button>
+          </div>
+        </td>
+      </tr>
+    </table>
+    
+    
+    <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+    <script src="static/js/countries.js"></script>
+    <script src="static/js/script.js"></script>
+
+  </body>
+</html>

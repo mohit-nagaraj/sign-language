@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign detection</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudfare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style_about_us.css') }}"> 
+</head>
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="header">
+        <img src="https://imagizer.imageshack.com/img923/8437/J7bMIe.png" alt="logo" srcset="">
+      </div>
+      <div class="main">
+        <div class="hero-img"><img src="https://imagizer.imageshack.com/img922/4061/erBkeP.png" alt=""></div>
+        <div class="hero-text">
+          <h1>Sign Language Detection</h1>
+          <p>Our website utilizes sign language detection to facilitate easier conversations between people who use different forms of communication. By incorporating this technology, we can bridge the communication gap between sign language users and those who rely on spoken language.</p>
+          <a href="#">
+            <form action="{{ url_for('about_us') }}">
+          <button id="startbro" class="cssbuttons-io-button"> Get started
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+            </div>
+          </button>
+              </form>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>
